@@ -1,0 +1,4 @@
+ItemRecognResp,both sources correct,one source correct,neither source correct,M summed confidence rating
+Remember,509,510,412,"3.99 (3.86, 4.13)"
+Know,122,199,243,"2.59 (2.42, 2.76)"
+Guess,43,66,225,"1.29 (1.12, 1.47)"
