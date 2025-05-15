@@ -41,13 +41,10 @@ The findings demonstrate that identification RTs were faster in trials with corr
 1. Clone this repository:
 git clone https://github.com/LinzanLiu/datascipsych_finalproject.git
 
-2. Install dependencies:```
-pip install -e .
-```
+2. Install dependencies:```pip install -e .```
 
-3. Run the analysis notebook:```
-jupyter lab jupyter/replication.ipynb
-```
+
+3. Run the analysis notebook:```jupyter lab jupyter/replication.ipynb```
 
 ### Reference
 
