@@ -1,7 +1,9 @@
 [project]
 name = "final_project"
 version = "0.1.0"
-author = "Linzan Liu"
+authors = [
+    {name = "Linzan Liu", email = "linzan@uwm.edu"},
+]
 dependencies = [
     "numpy",
     "scipy",
@@ -11,10 +13,29 @@ dependencies = [
     "seaborn",
     "pingouin",
     "jupyterlab",
-    "jupyterlab_rise"
+    "jupyterlab_rise",
+    "matplotlib",
+    "statsmodels",
 ]
 
+description = "Replication of Experiment 1 from 'Examining the relationship between processing fluency and memory for source information' by Huang & Shanks (2021)"
+readme = "README.md"
+license = "MIT"
+
+[project.urls]
+Repository = "https://github.com/LinzanLiu/datascipsych_finalproject"
 
 [build-system]
 requires = ["setuptools >= 61.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.pytest]
+testpaths = ["tests"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "isort",
+    "flake8",
+]

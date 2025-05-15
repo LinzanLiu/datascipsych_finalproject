@@ -1,18 +1,10 @@
+# -*- coding: utf-8 -*-
 import pandas as pd
 import polars as pl
 import numpy as np
 from pathlib import Path
 
 def load_and_preprocess_data(file_path):
-    """
-    Load data from CSV file and perform initial preprocessing
-    
-    Args:
-        file_path: Path to the CSV file
-        
-    Returns:
-        Preprocessed pandas DataFrame
-    """
     # Load data using polars and convert to pandas
     data = pl.read_csv(file_path)
     df = data.to_pandas()
@@ -23,15 +15,6 @@ def load_and_preprocess_data(file_path):
     return df
 
 def calculate_correctness(df):
-    """
-    Calculate correctness columns for size, location, and total
-    
-    Args:
-        df: DataFrame containing the experiment data
-        
-    Returns:
-        DataFrame with added correctness columns
-    """
     # Create size correctness column
     df["size_correct"] = np.where(
         ((df["SourceSizeResp"] > 0) & (df["SourceEncodingSize"] == "large")) | 
@@ -52,15 +35,6 @@ def calculate_correctness(df):
     return df
 
 def calculate_recognition_rates(df):
-    """
-    Calculate hit rate and false alarm rate
-    
-    Args:
-        df: DataFrame containing the experiment data with ItemStatus and ItemRecogStatus columns
-        
-    Returns:
-        Dictionary containing hit_rate and fa_rate
-    """
     # Calculate hit rate
     total_targets = df[df['ItemStatus'] == 'target'].shape[0]
     hits = df[(df['ItemStatus'] == 'target') & (df['ItemRecogStatus'] == 'Hit')].shape[0]
